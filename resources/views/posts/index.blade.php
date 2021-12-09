@@ -1,17 +1,18 @@
+
 <x-admin-master>
 
     @section('content')
-    @if ($errors->any())
-    <div class="alert alert-danger">
+        @if ($errors->any())
+        <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
         </ul>
-    </div>
-@endif
-    
-    <div class="container">
+        </div>
+         @endif
+ 
+        <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-12">
           <h1>Manage Posts</h1>
@@ -45,9 +46,8 @@
             </div>
         </div>
     </div>
-    
+
     @endsection
-    
-    
-    
-    </x-admin-master>
+</x-admin-master>
+
+

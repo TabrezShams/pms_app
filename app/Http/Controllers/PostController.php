@@ -13,14 +13,21 @@ class PostController extends Controller
 {
     public function index()
     {
+        if(Auth::user()->role_id==1)
+        {
+            $posts = Post :: all();
+            return view('posts.index', compact('posts'));     
+
+        }
         
         $posts = Post :: all();
-        return view('posts.index', compact('posts'));
+        return view('posts.userindex', compact('posts'));  
+
     }
 
     public function create()
     {
-        return view('posts.create');
+        return view('posts.create'); 
     }
 
     public function store(Request $request)
