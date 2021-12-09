@@ -38,6 +38,10 @@ Route::group(['middleware' => ['check_permission']], function(){
 
 
 
+Route::get('/posts/{posts}/comments',  [App\Http\Controllers\CommentController::class, 'index']);
+Route::post('/comments', [App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
+
+
 
 
 
