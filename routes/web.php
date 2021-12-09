@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\PostController::class, 'index'])->name('posts');
 
-
+Route::resource('user',UserController::class);
 
 Route::group(['middleware' => ['check_permission']], function(){
     //Route::resource('posts', PostController::class);

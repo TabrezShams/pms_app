@@ -58,10 +58,10 @@
       <!-- Nav Item - Posts Collapse Menu -->
       <x-admin-sidebar-posts-links></x-sidebar-posts-links>
 
-      {{-- <!-- Nav Item - Users Collapse Menu -->
+      <!-- Nav Item - Users Collapse Menu -->
       <x-admin-sidebar-users-links></x-admin-sidebar-users-links>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
+      {{-- <!-- Nav Item - Utilities Collapse Menu -->
       <x-admin-sidebar-roles-links></x-admin-sidebar-roles-links> --}}
       
       <!-- Divider -->
