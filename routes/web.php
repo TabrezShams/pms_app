@@ -21,12 +21,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\PostController::class, 'index'])->name('posts');
 
-Route::resource('user',UserController::class);
+
 
 Route::group(['middleware' => ['check_permission']], function(){
-    //Route::resource('posts', PostController::class);
-
     
+    Route::resource('user',UserController::class);
     Route::get('/posts/create', [App\Http\Controllers\PostController::class, 'create'])->name('posts.create');
     Route::post('/posts', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
     Route::get('/posts/{posts}', [App\Http\Controllers\PostController::class, 'show'])->name('posts.show');
@@ -36,6 +35,9 @@ Route::group(['middleware' => ['check_permission']], function(){
     Route::delete('/posts/{posts}', [App\Http\Controllers\PostController::class, 'destroy'])->name('posts.destroy');
 
 });
+
+
+
 
 
 
