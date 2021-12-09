@@ -50,14 +50,15 @@ class CheckPermission
             }
             else
             {
-            dump($request->route()->getName());
+            //dump($request->route()->getName());
 
             return $next($request);
             }
         }
         else{
             if($request->route()->getName() == 'posts.index' ||
-            $request->route()->getName() == 'posts.show')
+               $request->route()->getName() == 'posts.show'  ||
+               $request->route()->getName() == 'comments.store')
             {
                 return $next($request);
             }
