@@ -41,8 +41,19 @@ class CheckPermission
                 }
                 
             }
+            elseif($request->route()->getName() == 'user.index' ||
+                   $request->route()->getName() == 'user.edit'  ||
+                   $request->route()->getName() == 'user.destroy' ||
+                   $request->route()->getName() == 'user.create')
+            {
+                return redirect()->back()->withErrors(['error' => 'This request cannot be processed']);
+            }
+            else
+            {
+            dump($request->route()->getName());
 
             return $next($request);
+            }
         }
         else{
             if($request->route()->getName() == 'posts.index' ||
